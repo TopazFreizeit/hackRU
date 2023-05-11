@@ -119,6 +119,7 @@ const ModalCreateTask: React.FC<{
 
   const handleSubmit = async () => {
     console.log(`IM HERE`);
+    setIsProcessing(true);
     try {
       const response = await fetch("http://localhost:8000/goals", {
         method: "POST",
@@ -134,7 +135,10 @@ const ModalCreateTask: React.FC<{
     } catch (error) {
       console.error(error);
     }
+    setIsProcessing(false);
   };
+
+  const [isProcessing, setIsProcessing] = useState(false);
 
   return (
     <Modal onClose={onClose} title={nameForm}>
@@ -179,7 +183,7 @@ const ModalCreateTask: React.FC<{
         />
         {name && (
           <button type="button" className="btn mt-5" onClick={handleSubmit}>
-            Generate Achievement
+            {isProcessing ? 'Processing...' : 'Generate Achievement'}
           </button>
         )}
         <InputCheckbox
