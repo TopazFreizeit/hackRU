@@ -142,7 +142,8 @@ const ModalCreateTask: React.FC<{
 
   return (
     <Modal onClose={onClose} title={nameForm}>
-      <form className="flex flex-col stylesInputsField">
+      <form  className="flex flex-col stylesInputsField"
+       style={{ maxHeight: "400px", overflowY: "auto" }}>
         <label>
           Title
           <input
