@@ -20,9 +20,12 @@ def send_and_recive_query_to_chapy(chapy, message_content, role="user"):
     print(f"ans: {ans}")
     return ans['choices'][0]['message']['content']
 
-def construct_query(employee: dict):
+def construct_query(employee: dict, manager_Input: str, isSus: bool):
     employee_background_str = _get_employee_background_str(employee_data=employee)
-    query = f"Please generate a goal, doable in a year, for an employee with the following properties:\n{employee_background_str}" 
+    if(isSus):
+        query = f"Please generate a goal to my employee regarding sustainability, doable in a year, for an employee with the following properties:\n{employee_background_str}\n{manager_Input}" 
+    else:
+        query = f"Please generate a goal to my employee, doable in a year, for an employee with the following properties:\n{employee_background_str}\n{manager_Input}" 
     
     return query
 

@@ -1,11 +1,14 @@
 [
   {
-    "id": 1,
+    "name": "moti",
     "properties": {
       "role": "Sales Agent",
       "years_of_experience": 3,
       "sales_success_rate": 30,
-      "calls_per_day": 10
+      "calls_per_day": 10,
+      "sales_per_day": 5,
+      "company_name": "renuar",
+      "company_LOB": "clothing"
     }
   }
 ]

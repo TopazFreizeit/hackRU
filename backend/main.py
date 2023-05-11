@@ -15,13 +15,12 @@ app.add_middleware(
 )
 
 # Routes
-
 @app.post("/goals")
 async def get_employee_goals(employee: Employee):
-    employee_db_data = get_employee_data(employee.id)
+    employee_db_data = get_employee_data(employee.name)
     employee_data = merge_db_and_request_data(employee_db_data, employee)
 
-    query = construct_query(employee_data)
+    query = construct_query(employee_data,employee.manager_input,employee.isSus)
     result = send_and_recive_query_to_chapy(chapy, query)
 
     return result
