@@ -170,6 +170,7 @@ const ModalCreateTask: React.FC<{
       <form
         className="flex flex-col stylesInputsField"
         style={{ maxHeight: "400px", overflowY: "auto", flex: "true" }}
+        onSubmit={addNewTaskHandler}
       >
         <input
           type="text"
@@ -261,7 +262,7 @@ const ModalCreateTask: React.FC<{
             ))}
           </select>
         </label>
-        <button type="submit" className="btn mt-5" onSubmit={addNewTaskHandler}>
+        <button type="submit" className="btn mt-5">
           {nameForm}
         </button>
       </form>
