@@ -5,8 +5,7 @@
       "role": "Sales Agent",
       "years_of_experience": 3,
       "sales_success_rate": 30,
-      "calls_per_day": 10,
-      "role": "Sales Agent"
+      "calls_per_day": 10
     }
   }
 ]
