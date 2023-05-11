@@ -3,19 +3,19 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const links = [
   {
-    name: "All achievements",
+    name: "All goals",
     path: "/",
   },
   {
-    name: "Important achievements",
+    name: "Sustainability goals",
     path: "/important",
   },
   {
-    name: "Completed achievements",
+    name: "Completed goals",
     path: "/completed",
   },
   {
-    name: "Uncompleted achievements",
+    name: "Uncompleted goals",
     path: "/uncompleted",
   },
 ];

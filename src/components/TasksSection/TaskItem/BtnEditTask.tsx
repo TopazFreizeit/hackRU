@@ -34,7 +34,7 @@ const BtnEditTask: React.FC<{ task: Task }> = ({ task }) => {
         <ModalCreateTask
           onClose={closeModalEditTask}
           task={task}
-          nameForm="Edit achievement"
+          nameForm="Edit goal"
           onConfirm={editTaskHandler}
         />
       )}

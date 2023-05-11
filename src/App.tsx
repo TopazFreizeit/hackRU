@@ -27,7 +27,7 @@ const App: React.FC = () => {
       {modal.modalCreateTaskOpen && (
         <ModalCreateTask
           onClose={closeModalCreateTask}
-          nameForm="Add a achievement"
+          nameForm="Add a goal"
           onConfirm={createNewTaskHandler}
         />
       )}

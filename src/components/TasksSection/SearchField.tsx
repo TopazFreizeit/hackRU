@@ -61,7 +61,7 @@ const SearchField: React.FC = () => {
         <input
           type="search"
           id="search"
-          placeholder="Search achievement"
+          placeholder="Search goal"
           ref={searchResultsRef}
           onKeyUp={({ currentTarget }) => {
             setSearchInputValue(currentTarget.value);
@@ -86,7 +86,7 @@ const SearchField: React.FC = () => {
                 </button>
               </>
             ) : (
-              <span>No achievements found</span>
+              <span>No goals found</span>
             )}
           </div>
         )}

@@ -17,7 +17,7 @@ const ImportantTasks: React.FC = () => {
 
   return (
     <LayoutRoutes
-      title="Important achievements"
+      title="Sustainability goals"
       tasks={importantTasks}
     ></LayoutRoutes>
   );

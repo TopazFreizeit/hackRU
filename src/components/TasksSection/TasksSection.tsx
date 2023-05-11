@@ -9,7 +9,7 @@ import TaskOnly from "../Routes/TaskOnly";
 import TodaysTasks from "../Routes/TodaysTasks";
 import HeaderTasks from "./HeaderTasks";
 
-const achievementsSection: React.FC = () => {
+const goalsSection: React.FC = () => {
   return (
     <main className=" pt-5 pb-8 sm:pb-16 px-3 md:px-8 md:w-full xl:w-8/12 m-auto min-h-screen">
       <HeaderTasks />
@@ -19,11 +19,11 @@ const achievementsSection: React.FC = () => {
         <Route path="/important" element={<ImportantTasks />} />
         <Route
           path="/completed"
-          element={<DoneTasks done={true} title="Completed achievements" />}
+          element={<DoneTasks done={true} title="Completed goals" />}
         />
         <Route
           path="/uncompleted"
-          element={<DoneTasks done={false} title="Uncompleted achievements" />}
+          element={<DoneTasks done={false} title="Uncompleted goals" />}
         />
         <Route path="/results" element={<SearchResults />} />
         <Route path="/dir/:dir" element={<Directory />} />
@@ -34,4 +34,4 @@ const achievementsSection: React.FC = () => {
   );
 };
 
-export default achievementsSection;
+export default goalsSection;

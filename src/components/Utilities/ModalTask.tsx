@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { TextareaHTMLAttributes, useRef, useState } from "react";
 import { Task } from "../../interfaces";
 import { useAppSelector } from "../../store/hooks";
 import Modal from "./Modal";
@@ -117,6 +117,13 @@ const ModalCreateTask: React.FC<{
     setName(event.target.value);
   };
 
+  const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const textarea = event.target;
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setDescription(textarea.value);
+  };
+
   const handleSubmit = async () => {
     console.log(`IM HERE`);
     setIsProcessing(true);
@@ -174,6 +181,7 @@ const ModalCreateTask: React.FC<{
             className="w-full"
             value={description}
             onChange={({ target }) => setDescription(target.value)}
+            onInput={handleInput}
           ></textarea>
         </label>
         <input
@@ -184,7 +192,7 @@ const ModalCreateTask: React.FC<{
         />
         {name && (
           <button type="button" className="btn mt-5" onClick={handleSubmit}>
-            {isProcessing ? 'Processing...' : 'Generate Achievement'}
+            Generate goal
           </button>
         )}
         <InputCheckbox
