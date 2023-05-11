@@ -140,7 +140,11 @@ const ModalCreateTask: React.FC<{
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: 1, manager_input: comments, isSus: isImportant }),
+        body: JSON.stringify({
+          name: name,
+          manager_input: comments,
+          isSus: isImportant,
+        }),
       });
 
       const data = await response.json();
