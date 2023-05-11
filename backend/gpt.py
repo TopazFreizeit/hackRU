@@ -22,9 +22,9 @@ def send_and_recive_query_to_chapy(chapy, message_content, role="user"):
 
 def construct_query(employee: dict):
     employee_background_str = _get_employee_background_str(employee_data=employee)
-    query = f"Please generate 10 goals, doable in a year,\
-          for a {employee['role']} with the following background:\n {employee_background_str}\n\
-            please respond in a json format, with each goal numbered in a differnt key" 
+    query = f"Please generate a goal, doable in a year,\
+            for an employee with the following properties:\n{employee_background_str}\
+                also please limit your answer to 40 words"
     
     return query
 
