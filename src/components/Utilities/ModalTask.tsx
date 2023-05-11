@@ -123,11 +123,6 @@ const ModalCreateTask: React.FC<{
   const handleCommentsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setComments(event.target.value);
   };
-  const [category, setCategory] = useState("");
-
-  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCategory(event.target.value);
-  };
 
   const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = event.target;
@@ -149,7 +144,6 @@ const ModalCreateTask: React.FC<{
           name: name,
           manager_input: comments,
           isSus: isImportant,
-          category: category,
         }),
       });
 
@@ -168,7 +162,7 @@ const ModalCreateTask: React.FC<{
     <Modal onClose={onClose} title={nameForm}>
       <form
         className="flex flex-col stylesInputsField"
-        style={{ maxHeight: "400px", overflowY: "auto", flex: "true" }}
+        style={{ maxHeight: "400px", overflowY: "auto" }}
       >
         <input
           type="text"
@@ -183,12 +177,7 @@ const ModalCreateTask: React.FC<{
         />
         <input
           type="text"
-          placeholder="Type Here Any Comments To Generate More Personalized Goal"
-          onChange={handleCommentsChange}
-        />
-        <input
-          type="text"
-          placeholder="Type Here The Cateory Of The Goal"
+          placeholder="Type Here Any Spcieal Comments"
           onChange={handleCommentsChange}
         />
         {name && (
