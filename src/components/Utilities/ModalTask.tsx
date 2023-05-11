@@ -117,17 +117,28 @@ const ModalCreateTask: React.FC<{
     setName(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    alert(`Hello, ${name}!`);
+  const handleSubmit = async () => {
+    console.log(`IM HERE`);
+    try {
+      const response = await fetch("http://localhost:8000/goals", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: 1 }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      setDescription(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <Modal onClose={onClose} title={nameForm}>
-      <form
-        className="flex flex-col stylesInputsField"
-        onSubmit={addNewTaskHandler}
-      >
+      <form className="flex flex-col stylesInputsField">
         <label>
           Title
           <input
@@ -167,7 +178,7 @@ const ModalCreateTask: React.FC<{
           onChange={handleInputChange}
         />
         {name && (
-          <button type="submit" className="btn mt-5">
+          <button type="button" className="btn mt-5" onClick={handleSubmit}>
             Generate Achievement
           </button>
         )}
@@ -199,7 +210,7 @@ const ModalCreateTask: React.FC<{
             ))}
           </select>
         </label>
-        <button type="submit" className="btn mt-5">
+        <button type="submit" className="btn mt-5" onSubmit={addNewTaskHandler}>
           {nameForm}
         </button>
       </form>
