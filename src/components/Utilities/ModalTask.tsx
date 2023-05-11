@@ -166,6 +166,11 @@ const ModalCreateTask: React.FC<{
           placeholder="Type Here The Employee Name"
           onChange={handleInputNameChange}
         />
+        <InputCheckbox
+          isChecked={isImportant}
+          setChecked={setIsImportant}
+          label="Mark as sustainability goal"
+        />
         <input
           type="text"
           placeholder="Type Here Any Spcieal Comments"
@@ -208,11 +213,6 @@ const ModalCreateTask: React.FC<{
             max={maxDate}
           />
         </label>
-        <InputCheckbox
-          isChecked={isImportant}
-          setChecked={setIsImportant}
-          label="Mark as sustainability goal"
-        />
         <InputCheckbox
           isChecked={isCompleted}
           setChecked={setIsCompleted}
