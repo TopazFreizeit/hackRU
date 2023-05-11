@@ -20,7 +20,7 @@ async def get_employee_goals(employee: Employee):
     employee_db_data = get_employee_data(employee.name)
     employee_data = merge_db_and_request_data(employee_db_data, employee)
 
-    query = construct_query(employee_data,employee.manager_input,employee.isSus)
+    query = construct_query(employee_data,employee.manager_input,employee.isSus, employee.category)
     result = send_and_recive_query_to_chapy(chapy, query)
 
     return result

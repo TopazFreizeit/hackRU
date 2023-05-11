@@ -19,7 +19,7 @@ def get_employee_data(employee_name: str):
 
 def merge_db_and_request_data(employee_db_data, employee: Employee):
     for prop_key, prop_val in employee.dict().items():
-        if prop_key != "name" and prop_val is not None:
+        if prop_key != "name" and prop_key != "manager_input" and prop_key != "isSus" and prop_key != "category" and prop_val is not None:
             employee_db_data["properties"][prop_key] = prop_val
 
     return employee_db_data

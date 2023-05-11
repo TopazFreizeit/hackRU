@@ -125,7 +125,7 @@ const ModalCreateTask: React.FC<{
   };
   const [category, setCategory] = useState("");
 
-  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(event.target.value);
   };
 
@@ -186,11 +186,20 @@ const ModalCreateTask: React.FC<{
           placeholder="Type Here Any Comments To Generate More Personalized Goal"
           onChange={handleCommentsChange}
         />
-        <input
-          type="text"
-          placeholder="Type Here The Cateory Of The Goal"
-          onChange={handleCommentsChange}
-        />
+      <label>
+          Category
+          <select
+            value={category}
+            onChange={handleCategoryChange}
+            className="w-full"
+          >
+            <option value="">-- Select a category --</option>
+            <option value="WorkProductivity">Work Productivity</option>
+            <option value="Fitness">Fitness</option>
+            <option value="CommunityContribute">Community Contribute</option>
+            {/* add more options as needed */}
+          </select>
+        </label>
         {name && (
           <button type="button" className="btn mt-5" onClick={handleSubmit}>
             {isProcessing ? "Processing..." : "Generate Achievement"}
