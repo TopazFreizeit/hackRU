@@ -11,7 +11,7 @@ function App() {
   };
   return (
     <div className="App">
-      <h1 className="title">Team 59</h1>
+      <h1 className="title">Moti Story</h1>
       <div className="button-container">
       <button className="button" onClick={playVideo}>
           Play Video
@@ -22,7 +22,6 @@ function App() {
         className="video"
         src={videoFile}
       />
-      <img src={logo} className="App-logo" alt="logo" />
     </div>
   );
 }
