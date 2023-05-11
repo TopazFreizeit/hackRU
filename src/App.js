@@ -11,13 +11,11 @@ function App() {
   };
   return (
     <div className="App">
-      <h1 className="title">Team 59 - Salesforce winner</h1>
+      <h1 className="title">Team 59</h1>
       <div className="button-container">
       <button className="button" onClick={playVideo}>
           Play Video
         </button>
-        <button className="button">Button 2</button>
-        <button className="button">Button 3</button>
       </div>
       <video
         ref={videoRef}
