@@ -1,7 +1,6 @@
-from typing import List, Union
+from typing import Union
 from pydantic import BaseModel
 
 class Employee(BaseModel):
     id: int
-    strengths: Union[List[str], None] = None
-    weakneses: Union[List[str], None] = None
+    additional_data: Union[str, None] = None
