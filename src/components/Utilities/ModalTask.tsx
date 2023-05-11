@@ -91,6 +91,7 @@ const ModalCreateTask: React.FC<{
   });
 
   const addNewTaskHandler = (event: React.FormEvent): void => {
+    debugger;
     event.preventDefault();
 
     isTitleValid.current = title.trim().length > 0;
@@ -175,16 +176,13 @@ const ModalCreateTask: React.FC<{
           value={name}
           placeholder="Type Here The Employee Name"
           onChange={handleInputNameChange}
-        />
-        <InputCheckbox
-          isChecked={isImportant}
-          setChecked={setIsImportant}
-          label="Mark as sustainability goal"
+          style={{ marginBottom: "10px" }}
         />
         <input
           type="text"
           placeholder="Type Here Any Comments To Generate More Personalized Goal"
           onChange={handleCommentsChange}
+          style={{ marginBottom: "10px" }}
         />
       <label>
           Category
@@ -197,6 +195,7 @@ const ModalCreateTask: React.FC<{
             <option value="WorkProductivity">Work Productivity</option>
             <option value="Fitness">Fitness</option>
             <option value="CommunityContribute">Community Contribute</option>
+            <option value="Sustainability">Sustainability</option>
             {/* add more options as needed */}
           </select>
         </label>
@@ -213,6 +212,8 @@ const ModalCreateTask: React.FC<{
             value={description}
             onChange={({ target }) => setDescription(target.value)}
             onInput={handleInput}
+            style={{ height: "auto", minHeight: "100px", resize: "none" }}
+            rows={Math.max(3, description.split("\n").length)}
           ></textarea>
         </label>
         <label>

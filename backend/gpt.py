@@ -27,8 +27,8 @@ def construct_query(employee: dict, manager_Input: str, isSus: bool,category: st
     else:
         query = f"Please generate one goal to my employee, doable in a year, for an employee with the following properties:\n{employee_background_str}" 
     if(manager_Input):
-        query = query + f"Please focus mainly on: {manager_Input}\n the goal should be in category:{category}"
-    query = query + f"\n please limit to 40 words"
+        query = query + f"Please focus mainly on: {manager_Input}"
+    query = query + f"\n the goal should be regarding the:{category} of the employee\n please limit to 40 words"
     return query
 
 def _get_employee_background_str(employee_data: dict):
