@@ -4,7 +4,8 @@ import json
 JSON_DB_PATH = "data/dummy_data.json"
 
 def get_employee_data(employee_id: int):
-    db_data = json.load(JSON_DB_PATH)
+    with open(JSON_DB_PATH) as json_file:
+        db_data = json.load(json_file)
     employee_data = None
     
     try:
@@ -17,7 +18,7 @@ def get_employee_data(employee_id: int):
     return employee_data
 
 def merge_db_and_request_data(employee_db_data, employee: Employee):
-    for prop_key, prop_val in enumerate(employee.json()):
+    for prop_key, prop_val in employee.dict().items():
         employee_db_data[prop_key] = prop_val
 
     return employee_db_data
