@@ -16,7 +16,10 @@ const ImportantTasks: React.FC = () => {
   useDescriptionTitle("Tasks marked as important", "Important tasks");
 
   return (
-    <LayoutRoutes title="Important tasks" tasks={importantTasks}></LayoutRoutes>
+    <LayoutRoutes
+      title="Important achievements"
+      tasks={importantTasks}
+    ></LayoutRoutes>
   );
 };
 

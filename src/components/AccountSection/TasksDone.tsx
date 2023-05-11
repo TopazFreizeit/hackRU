@@ -41,7 +41,7 @@ const TasksDone: React.FC = () => {
       {tasks.length !== 0 && (
         <div className="mt-6">
           <span className="flex justify-between mb-2">
-            <span>All tasks </span> {allTasksDone.length}/{tasks.length}
+            <span>All achievements</span> {allTasksDone.length}/{tasks.length}
           </span>
           <div className="barProgress">
             <div style={{ width: percentageAllTasks + "%" }}></div>

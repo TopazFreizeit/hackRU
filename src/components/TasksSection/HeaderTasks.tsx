@@ -57,7 +57,7 @@ const HeaderTasks: React.FC = () => {
       <SearchField />
       <div className="text-center">
         <span className="text-slate-600 dark:text-slate-200 uppercase font-bold text-sm block xl:hidden">
-          To-do list
+          To-do achievements
         </span>
         <time dateTime={dateTimeFormat}>{todayDate}</time>
       </div>
