@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-top: 50px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.button {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 20px;
+}
