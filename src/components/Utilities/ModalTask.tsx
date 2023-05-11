@@ -113,8 +113,15 @@ const ModalCreateTask: React.FC<{
 
   const [name, setName] = useState("");
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputNameChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setName(event.target.value);
+  };
+  const [comments, setComments] = useState("");
+
+  const handleCommentsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setComments(event.target.value);
   };
 
   const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -133,7 +140,7 @@ const ModalCreateTask: React.FC<{
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id: 1 }),
+        body: JSON.stringify({ id: 1, comments: comments, isSus: isImportant }),
       });
 
       const data = await response.json();
@@ -149,13 +156,40 @@ const ModalCreateTask: React.FC<{
 
   return (
     <Modal onClose={onClose} title={nameForm}>
-      <form  className="flex flex-col stylesInputsField"
-       style={{ maxHeight: "400px", overflowY: "auto" }}>
+      <form
+        className="flex flex-col stylesInputsField"
+        style={{ maxHeight: "400px", overflowY: "auto" }}
+      >
+        <input
+          type="text"
+          value={name}
+          placeholder="Type Here The Employee Name"
+          onChange={handleInputNameChange}
+        />
+        <input
+          type="text"
+          placeholder="Type Here Any Spcieal Comments"
+          onChange={handleCommentsChange}
+        />
+        {name && (
+          <button type="button" className="btn mt-5" onClick={handleSubmit}>
+            {isProcessing ? "Processing..." : "Generate Achievement"}
+          </button>
+        )}
+        <label>
+          Description
+          <textarea
+            placeholder="e.g, study for the test"
+            className="w-full"
+            value={description}
+            onChange={({ target }) => setDescription(target.value)}
+            onInput={handleInput}
+          ></textarea>
+        </label>
         <label>
           Title
           <input
             type="text"
-            placeholder="e.g, Moti need to sell more items."
             required
             value={title}
             onChange={({ target }) => setTitle(target.value)}
@@ -174,31 +208,10 @@ const ModalCreateTask: React.FC<{
             max={maxDate}
           />
         </label>
-        <label>
-          Description
-          <textarea
-            placeholder="e.g, study for the test"
-            className="w-full"
-            value={description}
-            onChange={({ target }) => setDescription(target.value)}
-            onInput={handleInput}
-          ></textarea>
-        </label>
-        <input
-          type="text"
-          value={name}
-          placeholder="Type Here The Employee Id"
-          onChange={handleInputChange}
-        />
-        {name && (
-          <button type="button" className="btn mt-5" onClick={handleSubmit}>
-            Generate goal
-          </button>
-        )}
         <InputCheckbox
           isChecked={isImportant}
           setChecked={setIsImportant}
-          label="Mark as important"
+          label="Mark as sustainability goal"
         />
         <InputCheckbox
           isChecked={isCompleted}
