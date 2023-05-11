@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAppSelector } from "../../store/hooks";
 import useCompletedTasks from "../hooks/useCompletedTasks";
 import useTodayTasks from "../hooks/useTodayTasks";
+import ImportantTasks from "../Routes/ImportantTasks";
 
 const TasksDone: React.FC = () => {
   const todaysTasks = useTodayTasks();
@@ -49,9 +50,9 @@ const TasksDone: React.FC = () => {
         </div>
       )}
 
-      {todaysTasks.length === 0 && (
+      {ImportantTasks.length === 0 && (
         <span className="mt-6 block pt-4 border-t-slate-200 dark:border-t-slate-700/[.3] border-t-2">
-          No tasks today
+          No sustainability goals!!!!
         </span>
       )}
 
